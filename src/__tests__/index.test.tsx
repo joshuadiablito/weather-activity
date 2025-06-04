@@ -4,7 +4,7 @@ import { useWeatherGraphQL } from '../hooks/useWeatherGraphQL';
 import { useCitySearch } from '../hooks/useCitySearch';
 import { rankActivitiesFromWeather } from '../utils/rankActivities';
 
-import Home from './index';
+import Home from '../pages/index';
 
 jest.mock('../hooks/useCitySearch');
 jest.mock('../hooks/useWeatherGraphQL');

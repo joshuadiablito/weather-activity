@@ -45,7 +45,10 @@ const resolvers = {
   },
 };
 
-const schema = createSchema({ typeDefs, resolvers });
+const schema = createSchema<{ req: NextApiRequest; res: NextApiResponse }>({
+  typeDefs,
+  resolvers,
+});
 
 const yoga = createYoga<{
   req: NextApiRequest;

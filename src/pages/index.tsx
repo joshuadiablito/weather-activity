@@ -30,7 +30,11 @@ export default function Home() {
       </Space>
       <Space direction="vertical" size="large" style={{ padding: 24 }}>
         {error ? <ErrorAlert error={error} /> : null}
-        {isLoading ? <Skeleton /> : null}
+        {isLoading ? (
+          <div data-testid="skeleton-loader">
+            <Skeleton />
+          </div>
+        ) : null}
         {ranked ? (
           <Flex wrap gap="middle">
             {ranked.map((day, index) => (
