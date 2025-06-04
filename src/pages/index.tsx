@@ -9,7 +9,6 @@ import { rankActivitiesFromWeather } from '../utils/rankActivities';
 
 export default function Home() {
   const { city, debouncedCity, setCity } = useCitySearch();
-
   const { data, error, isLoading } = useWeatherGraphQL(debouncedCity, !!debouncedCity);
   const ranked = useMemo(() => (data ? rankActivitiesFromWeather(data) : null), [data]);
 
@@ -17,7 +16,7 @@ export default function Home() {
     <App>
       <Space direction="vertical" size="large" style={{ padding: 24 }}>
         <Typography.Title>Weather Activity Ranker</Typography.Title>
-        <form method="post" noValidate>
+        <form method="post" noValidate autoComplete="off">
           <Flex gap="middle">
             <Input
               value={city}
@@ -28,13 +27,15 @@ export default function Home() {
           </Flex>
         </form>
       </Space>
+
+      {isLoading ? (
+        <div data-testid="skeleton-loader" style={{ padding: 24 }}>
+          <Skeleton />
+        </div>
+      ) : null}
+
       <Space direction="vertical" size="large" style={{ padding: 24 }}>
         {error ? <ErrorAlert error={error} /> : null}
-        {isLoading ? (
-          <div data-testid="skeleton-loader">
-            <Skeleton />
-          </div>
-        ) : null}
         {ranked ? (
           <Flex wrap gap="middle">
             {ranked.map((day, index) => (
