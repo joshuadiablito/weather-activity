@@ -2,12 +2,18 @@
 
 This was a fun task to get on with, I hope you can see I laid the ground works for something that could be extendable in the future. This is the first tech test I have done in a number of years, and I really enjoyed getting on with it.
 
+## How to run
+
+Build: `docker build -t weather-activity .`
+Run: `docker run -p 3000:3000 weather-activity`
+
 ## Architecture
 
 I believe architecture shouldn't have too much upfront design at the start of a project (within reason of course!) - I have worked in teams where we committed to a specific architecture up front and it cost us time later down the line and we couldn't get away from it. By having everything in one repo and following guidelines from Next.js we keep it simple in the short term and allow for further changes down the line.
 
 I tried to use techniques that I have known, adopted and used over the last few years.
 Notably:
+
 - how I composed the storybook files
 - using BDD in the unit tests
 - allowing some play tests within storybook to compliment the unit tests
@@ -26,35 +32,23 @@ I debounced the input value so we make fewer requests to the backend.
 
 I used hooks to make the UI more seamless, and to allow for better unit testing.
 
-## 🛡️ Architecture Overview
+## Improvements
 
-This project is a scalable and maintainable **Next.js** application that ranks the suitability of various activities (e.g. skiing, surfing, sightseeing) in a selected city over the next 7 days, based on weather data from Open-Meteo.
+I could add mock service worker handlers to the storybook tests to test the response of the graphql endpoint
+I could add tests for the API
+I could use date-fns or Intl API to format the date better
 
-### 🔧 Tech Stack
+## AI (Chat GPT)
 
-| Area                 | Stack/Tool                       | Rationale                                                                |
-| -------------------- | -------------------------------- | ------------------------------------------------------------------------ |
-| **Framework**        | Next.js (App Router)             | File-system routing, SSR/ISR capabilities, scalable structure            |
-| **UI Components**    | Ant Design + custom components   | Clean baseline design, easily extendable with minimal boilerplate        |
-| **Data Fetching**    | React Query + GraphQL API        | Normalized caching and declarative fetching logic                        |
-| **API Layer**        | Custom GraphQL server (Next API) | Abstracts Open-Meteo’s REST API and centralizes business logic           |
-| **State Derivation** | Custom ranking logic (pure TS)   | Evaluates and scores weather conditions dynamically for activity ranking |
-| **Testing**          | Jest + Testing Library           | Unit-tested hooks and logic using BDD-style specs                        |
-| **Storybook**        | Storybook v9 with CSF3 & play    | Isolated UI development with automated accessibility & interaction tests |
-| **Tooling**          | ESLint, Prettier, TypeScript     | Strong type safety, code consistency, and maintainability                |
+I used Chat GPT to explore ideas and different ways of tackling the problem.
+I asked for recommendations of libraries but ultimately did some research on Google and looked through documentation (Ant Design) before making a decision.
+I used libraries that I know well (react-query) rather than suggestions from Chat GPT (axios).
+I was able to write in depth prompts detailing what I wanted for unit tests, but updated them to reflect my style.
+I knew what I needed to do to tackle some issues (window.matchMedia mocking, query wrapper for unit tests), but was able to speed up delivery of that using Chat GPT.
+I was able to build out the boilerplate config (of which I could have used another repo from my machine), and then adjust as I saw fit.
+I had issues with next js struggling with the test files I wrote despite me ignoring them, and found Chat GPT very unhelpful in this, so using my own deductive skills and experience helped me to tackle down a weird error (node module importing get in a set js file "could not find get")
+I used Chat GPT for investigating bugs and suggesting possible solutions - it has its drawbacks especially around version of software and hallucinating ideas.
 
----
+## Thank you
 
-## 🧠 AI-Assisted Workflow
-
-AI (via ChatGPT) was used throughout the development process as a **productivity accelerator**, not a code generator.
-
-### How AI helped:
-
-- ✅ **Boilerplate & setup**: Helped configure Storybook with Next.js, React Query, Jest, and TS paths quickly and accurately.
-- ✅ **Iteration & Debugging**: Provided explanations for specific errors (e.g. Storybook ERESOLVE, missing QueryClientProvider) with direct, relevant fixes.
-- ✅ **Test writing**: Assisted with writing **BDD-style unit tests** for React Query hooks and custom debouncing logic.
-- ✅ **Code Review**: Helped refactor and clarify the logic of the ranking algorithm, ensuring it remained flexible and easily testable.
-- ✅ **Design choices**: Gave alternatives for component libraries, architecture trade-offs (e.g. REST vs GraphQL), and performance considerations.
-
-All AI suggestions were critically reviewed and integrated with careful consideration of context, quality, and maintainability.
+Thank you for your time and considering me for this position.

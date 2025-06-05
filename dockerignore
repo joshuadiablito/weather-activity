@@ -1,0 +1,16 @@
+# Ignore test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Ignore Storybook files
+**/*.stories.ts
+**/*.stories.tsx
+
+# Also ignore common dev artifacts
+node_modules
+.next
+coverage
+.storybook
+*.log

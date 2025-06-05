@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { App, Button, Flex, Input, Skeleton, Space, Typography } from 'antd';
+import { App, Flex, Input, Skeleton, Space, Typography } from 'antd';
 
 import { ActivityCard } from '../components/ActivityCard';
 import { ErrorAlert } from '../components/ErrorAlert';
@@ -23,7 +23,6 @@ export default function Home() {
               onChange={e => setCity(e.target.value)}
               placeholder="Enter city or town"
             />
-            <Button type="primary">Submit</Button>
           </Flex>
         </form>
       </Space>

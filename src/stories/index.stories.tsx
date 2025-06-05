@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import Home from '../pages/index';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { App } from 'antd';
+
+import Home from '../pages/index';
 
 const meta: Meta<typeof Home> = {
   title: 'Pages/Home',
