@@ -4,8 +4,22 @@ This was a fun task to get on with, I hope you can see I laid the ground works f
 
 ## How to run
 
+Commands:
+
 Build: `docker build -t weather-activity .`
 Run: `docker run -p 3000:3000 weather-activity`
+
+### Development
+
+Commands:
+
+NVM: `nvm install && nvm use`
+NPM: `npm install`
+Start: `npm run dev`
+Lint: `npm run lint`
+Build: `npm run build`
+Start: `npm start`
+Test: `npm test`
 
 ## Architecture
 
@@ -52,3 +66,5 @@ I used Chat GPT for investigating bugs and suggesting possible solutions - it ha
 ## Thank you
 
 Thank you for your time and considering me for this position.
+
+_The Readme was *not* written by an AI :)_
