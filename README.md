@@ -7,6 +7,7 @@ This was a fun task to get on with, I hope you can see I laid the ground works f
 Commands:
 
 Build: `docker build -t weather-activity .`
+
 Run: `docker run -p 3000:3000 weather-activity`
 
 ### Development
@@ -14,11 +15,17 @@ Run: `docker run -p 3000:3000 weather-activity`
 Commands:
 
 NVM: `nvm install && nvm use`
+
 NPM: `npm install`
+
 Start: `npm run dev`
+
 Lint: `npm run lint`
+
 Build: `npm run build`
+
 Start: `npm start`
+
 Test: `npm test`
 
 ## Architecture
