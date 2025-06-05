@@ -49,18 +49,27 @@ I used hooks to make the UI more seamless, and to allow for better unit testing.
 ## Improvements
 
 I could add mock service worker handlers to the storybook tests to test the response of the graphql endpoint
+
 I could add tests for the API
+
 I could use date-fns or Intl API to format the date better
 
 ## AI (Chat GPT)
 
 I used Chat GPT to explore ideas and different ways of tackling the problem.
+
 I asked for recommendations of libraries but ultimately did some research on Google and looked through documentation (Ant Design) before making a decision.
+
 I used libraries that I know well (react-query) rather than suggestions from Chat GPT (axios).
+
 I was able to write in depth prompts detailing what I wanted for unit tests, but updated them to reflect my style.
+
 I knew what I needed to do to tackle some issues (window.matchMedia mocking, query wrapper for unit tests), but was able to speed up delivery of that using Chat GPT.
+
 I was able to build out the boilerplate config (of which I could have used another repo from my machine), and then adjust as I saw fit.
-I had issues with next js struggling with the test files I wrote despite me ignoring them, and found Chat GPT very unhelpful in this, so using my own deductive skills and experience helped me to tackle down a weird error (node module importing get in a set js file "could not find get")
+
+I had issues with next js struggling with the test files I wrote despite me ignoring them, and found Chat GPT very unhelpful in this, so using my own deductive skills and experience helped me to tackle down a weird error (node module importing get in a set js file "could not find get").
+
 I used Chat GPT for investigating bugs and suggesting possible solutions - it has its drawbacks especially around version of software and hallucinating ideas.
 
 ## Thank you
