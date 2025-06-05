@@ -33,9 +33,13 @@ export default function Home() {
           <Skeleton />
         </div>
       ) : null}
+      {error ? (
+        <div data-testid="error-alert" style={{ padding: 24 }}>
+          <ErrorAlert error={error} />{' '}
+        </div>
+      ) : null}
 
       <Space direction="vertical" size="large" style={{ padding: 24 }}>
-        {error ? <ErrorAlert error={error} /> : null}
         {ranked ? (
           <Flex wrap gap="middle">
             {ranked.map((day, index) => (
